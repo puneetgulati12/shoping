@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_songs"
+        android:icon="@drawable/ic_home_black"
+        android:enabled="true"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_search"
+        android:enabled="true"
+        android:title="Search"/>
+    <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/ic_cart"
+        android:enabled="true"
+        android:title="Cart"/>
+
+    <item
+        android:id="@+id/navigation_artists"
+        android:icon="@drawable/ic_account_person"
+        android:enabled="true"
+        android:title="Account"/>
+
+</menu>

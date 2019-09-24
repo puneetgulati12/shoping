@@ -64,9 +64,9 @@
                         android:textColor="@color/white"/>
                     
                     <EditText
+                        android:id="@+id/emailid"
                         android:fontFamily="sans-serif-light"
                         android:layout_marginTop="5dp"
-
                         android:textColor="@color/white"
                         android:paddingLeft="15dp"
                         android:paddingRight="15dp"
@@ -161,6 +161,14 @@
             android:textColor="@color/white"
             android:fontFamily="sans-serif"/>
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone" />
 
 
 

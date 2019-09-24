@@ -55,6 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -113,6 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+               uploadImage();
 
                 progressBar.setVisibility(View.VISIBLE);
                 auth.createUserWithEmailAndPassword(email , password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -130,6 +134,8 @@ public class RegisterActivity extends AppCompatActivity {
                         }
 
 
+
+
                     }
                 });
             }
@@ -145,14 +151,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
-            Uri uri = data.getData();
+           filePath = data.getData();
 
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 // Log.d(TAG, String.valueOf(bitmap));
 
                 ImageView imageView = findViewById(R.id.imageviewregister);
                 imageView.setImageBitmap(bitmap);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
